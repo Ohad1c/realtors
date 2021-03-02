@@ -1,0 +1,79 @@
+.realtor_page {
+    display: grid;
+    grid-template-rows: min-content repeat(5 ,min-content) 60vh min-content;
+    
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem ,1fr) [center-start] repeat(8,
+    [col-start] minmax(min-content ,14rem) [col-end]) [center-end] minmax(6rem ,1fr) [full-end]; //1140/8 = 142.5px
+//    
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 6rem repeat(6 ,min-content) 60vh;
+        grid-template-columns: [full-start] minmax(6rem ,1fr) [center-start] repeat(8,
+        [col-start] minmax(min-content ,14rem) [col-end]) [center-end] minmax(6rem ,1fr) [full-end]; 
+    }
+    
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 6rem repeat(7 ,min-content) 60vh;
+    }
+//    
+//    @media only screen and (max-width: $bp-medium) {
+//        grid-template-rows: 6rem repeat(3 ,min-content);
+//    }
+    
+    &__houses-section {
+        background-color: yellow;
+        grid-column: full-start / full-end;
+    }
+    
+    &__houses-section2 {
+        background-color: brown;
+        grid-column: full-start / full-end;
+    }
+    
+    &__testimonials {
+        background-color: rgba($color-secondary, 0.5);
+        grid-column: full-start / col-end 4;
+        
+        @media only screen and (max-width: $bp-medium) {
+            grid-column: 1 / -1;
+            padding: 3rem;
+            height: 60vh
+        }
+        
+        @media only screen and (max-width: $bp-small) {
+            margin-top: 0;
+        }
+    }
+    
+    &__form {
+        background-color: $color-grey-dark-1;
+        grid-column: col-end 4 / -1 ;
+        padding: 6rem 8vw;
+        
+        @media only screen and (max-width: $bp-medium) {
+            grid-column: 1 / -1;
+            padding: 3rem; 
+            margin-top: 0;
+        }
+
+    }
+    
+    
+}
+
+.border-special {
+    border-style: solid;
+    border-width: 5px;   
+}
+
+.special-homes-heading {
+    grid-column: full-start / full-end;
+    justify-self: center;
+    padding-bottom: 40px;
+    text-transform: capitalize;
+    
+    @media only screen and (max-width: $bp-small) {
+        padding: 0;
+        margin-top: 8rem;
+    }
+}
+
